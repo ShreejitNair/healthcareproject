@@ -1,20 +1,18 @@
-- name : Configure Docker on EC2 Instances
-  hosts : all
+- name: Install Docker on the Jenkins EC2 Instance
+  hosts: localhost
   become: true
-  connection : ssh
-  tasks : 
-  - name: updating apt
-    command : sudo apt-get update
+  tasks:
+    - name: Update apt package index
+      apt:
+        update_cache: yes
 
-  - name : Install Docker
-    command : sudo apt-get install -y docker.io
-    become : yes
-    become_user : root
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
 
-  - name : Start Docker Service
-    command : sudo systemctl start docker
-    become : yes
-    become_user : root
-
-  - name: Deploy Docker Container
-    command: docker run -itd -p 8084:8082 shubhamkushwah123/medicure:1.0
+    - name: Start and enable Docker service
+      service:
+        name: docker
+        state: started
+        enabled: true
