@@ -58,4 +58,4 @@ jobs:
       uses: steebchen/kubectl@master
       with:
         config: ${{ secrets.KUBE_CONFIG }}
-        command: apply -f deploymentservice.yaml
+        command: apply -f deploymentservice.yaml --insecure-skip-tls-verify=true
