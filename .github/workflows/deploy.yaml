@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  DOCKER_IMAGE: shreejitnair2000/staragileprojecthealthcare:v1
+  DOCKER_IMAGE: shreejitnair2000/staragileprojecthealthcare
 
 jobs:
   build-test-deploy:
