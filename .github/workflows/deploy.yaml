@@ -50,7 +50,7 @@ jobs:
     # 3. SIMPLIFIED KUBERNETES DEPLOYMENT
     # -----------------------------------------------------------------
     - name: Deploy to Kubernetes
-      uses: steebchen/kubectl@v2.4.0
+      uses: steebchen/kubectl@latest
       with:
         config: ${{ secrets.KUBE_CONFIG }}
         command: apply -f deploymentservice.yaml
