@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: healthcare-k8s
-          image: shreejitnair2000/staragileprojecthealthcare:v122 # Image that will be used to containers in the cluster
+          image: shreejitnair2000/staragileprojecthealthcare:v1 # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8082 # The port that the container is running on in the cluster
